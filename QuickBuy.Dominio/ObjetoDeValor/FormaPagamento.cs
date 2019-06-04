@@ -7,7 +7,7 @@ using QuickBuy.Dominio.Entidades;
 
 namespace QuickBuy.Dominio.ObjetoDeValor
 {
-    public class FormaPagamento
+    public class FormaPagamento : Entidade
     {
         public int Id { get; set; }
         public string Nome { get; set; }
@@ -34,6 +34,9 @@ namespace QuickBuy.Dominio.ObjetoDeValor
 
         }
 
-
+        public override void Validate()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
