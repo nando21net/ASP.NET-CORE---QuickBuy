@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using QuickBuy.Repositorio.Contexto;
 
 namespace QuickBuy.Repositorio.Migrations
 {
     [DbContext(typeof(QuickBuyContexto))]
-    partial class QuickBuyContextoModelSnapshot : ModelSnapshot
+    [Migration("20190613191237_Errata2PrimeiraVersao")]
+    partial class Errata2PrimeiraVersao
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -138,26 +140,6 @@ namespace QuickBuy.Repositorio.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("FormaPagamento");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Descricao = "Forma de Pagamento Boleto",
-                            Nome = "Boleto"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Descricao = "Forma de Pagamento Cartao de Crédito",
-                            Nome = "Cartao de Crédito"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Descricao = "Forma de Pagamento Deposito",
-                            Nome = "Deposito"
-                        });
                 });
 
             modelBuilder.Entity("QuickBuy.Dominio.Entidades.ItemPedido", b =>
